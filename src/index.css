@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'centric';
+  src: url('./assets/font/ethnocentric.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'neo';
+  src: url('./assets/font/neo-latina-demo-FFP.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'olga';
+  src: url('./assets/font/Olga.ttf') format('opentype');
+}
+
+* {
+  color: white !important;
+  font-family: "Poppins";
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(31, 28, 28) !important;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  background-image: url("/public/logoport.png");
+  background-size: contain;
+}
+
+.navbar-nav>a {
+  letter-spacing: 3px;
+  transition: color 0.3s !important;
+  font-family: 'neo';
+  font-size: 1.2rem;
+}
+
+.navbar-nav>a:hover {
+  color: transparent !important;
+  /* Membuat teks menjadi transparan untuk menampilkan efek latar belakang */
+  background-image: linear-gradient(90deg, rgb(115, 77, 241) 30%, rgba(255, 0, 249, 1) 100%) !important;
+  /* Efek linear gradient pada teks saat dihover */
+  -webkit-background-clip: text !important;
+  /* Mengatur klip latar belakang hanya pada teks */
+  background-clip: text !important;
+  /* Mengatur klip latar belakang hanya pada teks */
+  animation: moveColor 2s linear infinite alternate !important;
+  /* Animasi untuk membuat warna dalam teks bergerak */
+}
+
+/* Homepage */
+
+.me {
+  width: 100vh;
+}
+
+.name {
+  position: absolute;
+  rotate: 270deg;
+  letter-spacing: 5px;
+  font-family: 'centric';
+  width: 400px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+
+.slogan>h2 {
+  font-size: 3rem;
+  font-family: "centric" !important;
+  letter-spacing: 5px;
+  /* font-weight: bold; */
+}
+
+.slogan>h3 {
+  letter-spacing: 5px;
+  font-family: "olga" !important;
+}
+
+
+.slogan>h4 {
+  letter-spacing: 5px;
+  font-family: "centric" !important;
+}
+
+.slogan>h2,
+.slogan>h3,
+.slogan>p {
+  margin: 0;
+}
+
+.sosmed>i {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 100%;
+}
+
+.language {
+  margin-right: 110px;
+  background: rgb(0, 0, 5);
+  /* background: linear-gradient(133deg, rgb(127, 10, 170) 57%, rgba(35, 9, 121, 1) 98%); */
+  background: rgb(59, 59, 59);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(107, 63, 253);
+}
+
+/* End Homepage */
+
+/* Portfolio Page */
+.category>button {
+  width: 8em;
+  position: relative;
+  height: 2em;
+  border: 3px ridge rgb(107, 63, 253);
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.category>button::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: rgb(31, 28, 28);
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.category>button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: rgb(31, 28, 28);
+  transition: 0.5s;
+}
+
+.category>button:hover::before,
+.category>button:hover::after {
+  transform: scale(0);
+}
+
+.category>button:hover {
+  box-shadow: inset 0 0 25px rgb(107, 63, 253);
+}
+
+.category-active::after, .category-active::before {
+  transform: scale(0);
+}
+
+.category-active {
+  box-shadow: inset 0 0 25px rgb(107, 63, 253);
+}
+
+/* End Portfolio Page */
+
+/* Contact Page */
+#contact > div > div > h1, #portfolio > div > div > h1 {
+  font-family: 'neo';
+}
+
+input-field:focus ~ .label, .input-field:valid .label {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border-radius: 30px;
+  color: black;
+  padding: 0 10px;
+}
+
+.input-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.input-box > input {
+  width: 100%;
+  height: 55px;
+  background: transparent;
+  color: red;
+  padding-inline: 20px 50px;
+  border: 2px solid blue;
+  outline: none;
+}
+
+.input-box > label {
+  position: absolute;
+  top: 15;
+  left: 20px;
+  transition: .2s;
+}
+
+
+
+/* End Contact Page */
+
+
+
+
+
+
+@keyframes moveColor {
+  0% {
+    background-position: 0% 50% !important;
+    /* Posisi awal dari linear gradient */
+  }
+
+  100% {
+    background-position: 100% 50% !important;
+    /* Posisi akhir dari linear gradient */
+  }
+}
